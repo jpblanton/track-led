@@ -2,7 +2,7 @@ from flask import Flask, render_template, jsonify, request
 from flask_mqtt import Mqtt
 
 app = Flask(__name__)
-app.config['MQTT_BROKER_URL'] = '192.168.1.55'  # use the free broker from HIVEMQ
+app.config['MQTT_BROKER_URL'] = 'test.mosquitto.org'  # use the free broker from HIVEMQ
 app.config['MQTT_BROKER_PORT'] = 1883  # default port for non-tls connection
 mqtt = Mqtt(app)
 
