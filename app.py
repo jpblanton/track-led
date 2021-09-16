@@ -11,9 +11,11 @@ def index():
     if request.method == 'POST':
         laptime = request.form['laptime']
         numlaps = request.form['numlaps']
-        mqtt.publish('test/track/led',  f"{laptime};{numlaps}")
+        ledcolor = request.form['ledcolor']
+        mqtt.publish('test/track/led',  f"{laptime};{numlaps};{ledcolor}")
         print(laptime)
         print(numlaps)
+        print(ledcolor)
 
     return render_template('index.html')
 

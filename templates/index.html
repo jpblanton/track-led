@@ -4,10 +4,18 @@
 	</head>
 	<body>
 		<form action="/" method="POST">
-			<label for="laptime">Time in seconds per lap: </label>
-			<input type="number" id="laptime" name="laptime">
-			<label for="numlaps">Number of laps: </label>
-			<input type="number" id="numlaps" name="numlaps"> 
+			<div>
+				<label for="laptime">Time in seconds per lap: </label>
+				<input type="number" id="laptime" name="laptime">
+			</div>
+			<div>
+				<label for="numlaps">Number of laps: </label>
+				<input type="number" id="numlaps" name="numlaps"> 
+			</div>
+			<div>
+				<label for="ledcolor">Pick a color: </label>
+				<input type="color" id="ledcolor" name="ledcolor">
+			</div>
 			<input type="submit" id="led" name="start" value="start lights">
 		</form>
 	</body>
