@@ -9,7 +9,11 @@ mqtt = Mqtt(app)
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
-        mqtt.publish('test/track/led',  "10;2")
+        laptime = request.form['laptime']
+        numlaps = request.form['numlaps']
+        mqtt.publish('test/track/led',  f"{laptime};{numlaps}")
+        print(laptime)
+        print(numlaps)
 
     return render_template('index.html')
 
