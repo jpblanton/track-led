@@ -8,6 +8,8 @@ mqtt = Mqtt(app)
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
+    if request.method == 'POST':
+        mqtt.publish('test/track/led',  "10;2")
 
     return render_template('index.html')
 
@@ -15,7 +17,7 @@ def index():
 def test():
 
     if request.method == 'POST':
-        mqtt.publish('test/track/led', 1)
+        mqtt.publish('test/track/led',  "10;2")
         return "yes it works"
     else:
         return "else"
