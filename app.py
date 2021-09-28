@@ -8,6 +8,9 @@ from utils import hex_to_rgb
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
 mqtt = Mqtt(app)
+print(app.config['FLASK_ENV'])
+
+distances = ['100m', '200m', '300m', '400m', '500m', '600m', '700m', '800m', '1600m', '3200m']
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -34,7 +37,7 @@ def index():
         print(lapseconds)
         print(numlaps)
 
-    return render_template('index.html')
+    return render_template('index.html', distances=distances)
 
 @app.route('/button', methods=['POST'])
 def test():

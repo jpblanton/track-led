@@ -1,3 +1,5 @@
+import struct
+
 def hex_to_rgb(value):
     value = value.lstrip('#')
     lv = len(value)
@@ -7,3 +9,8 @@ def hex_to_rgb(value):
 def hex_to_brg(value):
     r, g, b = hex_to_rgb(value)
     return b, r, g
+
+
+def pack_objects(values):
+    value_str = f'{len(values)}i'
+    return struct.pack(value_str, *values)

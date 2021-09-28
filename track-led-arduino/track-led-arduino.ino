@@ -90,6 +90,7 @@ void callback(char* topic, byte* payload, unsigned int length)
     ptr = strtok(NULL, ";");
   }
   */
+  Serial.println("here");
   chase(strip.Color(payload[8], payload[12], payload[16]), payload[0]*1000, payload[4], 3); // Red *1000 since we want to send seconds but arg is ms
   Serial.println("finished");
 }

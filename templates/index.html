@@ -3,14 +3,10 @@
 	<head>
 	</head>
 	<body>
-		<form action="/" method="POST">
+		<form action="/" method="POST" id="mainform">
 			<div>
-				<label for="laptime">Time in seconds per lap: </label>
+				<label for="laptime">400m pace in seconds: </label>
 				<input type="number" id="laptime" name="laptime">
-			</div>
-			<div>
-				<label for="numlaps">Number of laps: </label>
-				<input type="number" id="numlaps" name="numlaps"> 
 			</div>
 			<div>
 				<label for="ledcolor">Pick a color: </label>
@@ -18,5 +14,11 @@
 			</div>
 			<input type="submit" id="led" name="start" value="start lights">
 		</form>
+		<label for="distance">Distance: </label>
+		<select name="distance" id="distance" form="mainform">
+			<option value="{{distances[0]}}" selected>{{distances[0]}}</option>
+			{% for d in distances[1:] %}
+				<option value="{{d}}">{{d}}</option>
+			{% endfor %}
 	</body>
 </html>
